@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import { IntlProvider } from "react-intl";
 import { messageSource } from "./components/i18n/messageManager";
+import loadIconLibrary from "./components/workers/fontAwesomeLoader";
 
 const {
   availableLanguages,
@@ -15,6 +16,7 @@ const {
 class App extends Component {
   componentWillMount() {
     initMessages.apply(this);
+    loadIconLibrary();
   }
 
   render() {

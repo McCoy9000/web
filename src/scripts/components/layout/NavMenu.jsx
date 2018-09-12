@@ -7,19 +7,54 @@ export default class NavMenu extends Component {
       <div className="nav-menu">
         <ul>
           <li>
-            <NavLink to="/bio">Bio</NavLink>
+            <NavLink
+              to="/bio"
+              activeStyle={{
+                fontWeight: "bold"
+              }}
+            >
+              Bio
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/works">Works</NavLink>
+            <NavLink
+              to="/works"
+              activeStyle={{
+                fontWeight: "bold"
+              }}
+            >
+              Works
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/blog">Blog</NavLink>
+            <NavLink
+              to="/blog"
+              activeStyle={{
+                fontWeight: "bold"
+              }}
+            >
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink
+              to="/shop"
+              activeStyle={{
+                fontWeight: "bold"
+              }}
+            >
+              Shop
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink
+              to="/contact"
+              activeStyle={{
+                fontWeight: "bold"
+              }}
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>

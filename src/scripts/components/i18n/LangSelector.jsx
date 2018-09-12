@@ -3,7 +3,7 @@ import LangSelectorButton from "./LangSelectorButton";
 
 export default class LangSelector extends Component {
   render() {
-    const languages = this.props.languages;
+    const { languages } = this.props;
 
     const buttons = languages.map(language => (
       <li key={language}>

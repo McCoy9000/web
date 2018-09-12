@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { en, es, it } from "../../../resources/images/langSelector";
 
 export default class LangSelectorButton extends Component {
   render() {
@@ -7,6 +8,26 @@ export default class LangSelectorButton extends Component {
       changeLanguage(language);
     };
 
-    return <a onClick={handleClick}><div>{language}</div></a>;
+    return (
+      <a onClick={handleClick}>
+        <img
+          className={"langSelectorButton"}
+          src={(function() {
+            switch (language) {
+              case "en":
+                return en;
+              case "es":
+                return es;
+              case "it":
+                return it;
+              default:
+                return en;
+            }
+          })()}
+          alt={language}
+          title={language}
+        />
+      </a>
+    );
   }
 }

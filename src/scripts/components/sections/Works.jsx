@@ -1,57 +1,51 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import Dossier from "../common/Dossier";
+import importAll from "../workers/imageRetriever";
+import ImageReel from "../common/ImageReel";
 
 export default class Works extends Component {
   render() {
-    const resourcesUri = "resources/images/works/";
-
-    const images = require
-      .context("../../../resources/images/works", true)
-      .keys()
-      .map(image => image.split("./")[1])
-      .map(image => resourcesUri + image);
-
-    const graphicDesign = images.filter(image =>
-      image.includes("graphic-design")
+    const images = importAll(
+      require.context(
+        "../../../resources/images/works",
+        true,
+        /\.(gif|jpe?g|svg)$/
+      )
     );
 
-    const illustration = images.filter(image => image.includes("illustration"));
+    const graphicDesign = images.filter(image =>
+      image.path.includes("graphic-design")
+    );
 
-    const projects = images.filter(image => image.includes("projects"));
+    const illustration = images.filter(image =>
+      image.path.includes("illustration")
+    );
 
-    const imageName = image => {
-      return image.substring(image.lastIndexOf("/") + 1, image.length);
-    };
-
-    const renderReel = imageArr => {
-      return imageArr.map(image => {
-        return (
-          <img
-            key={imageName(image)}
-            src={image}
-            title={imageName(image)}
-            alt={imageName(image)}
-          />
-        );
-      });
-    };
+    const projects = images.filter(image => image.path.includes("projects"));
 
     return (
-      <div className="works container">
-        <div className="reel-container">
-          <h5>Graphic design</h5>
-          <div className="graphic-design-reel reel">
-            {renderReel(graphicDesign)}
+      <div className="works">
+        <Route path="/works/:id" component={Dossier} />
+        <div className="works-container">
+          <div className="reel-container">
+            <h5>Graphic design</h5>
+            <div className="graphic-design-reel reel">
+              <ImageReel images={graphicDesign} />
+            </div>
           </div>
-        </div>
-        <div className="reel-container">
-          <h5>Illustration</h5>
-          <div className="graphic-design-reel reel">
-            {renderReel(illustration)}
+          <div className="reel-container">
+            <h5>Illustration</h5>
+            <div className="graphic-design-reel reel">
+              <ImageReel images={illustration} />
+            </div>
           </div>
-        </div>
-        <div className="reel-container">
-          <h5>Projects</h5>
-          <div className="graphic-design-reel reel">{renderReel(projects)}</div>
+          <div className="reel-container">
+            <h5>Projects</h5>
+            <div className="graphic-design-reel reel">
+              <ImageReel images={projects} />
+            </div>
+          </div>
         </div>
       </div>
     );

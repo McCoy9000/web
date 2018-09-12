@@ -9,18 +9,18 @@ export default class Header extends Component {
       <div className="header">
         <div className="ribbon">
           <ul>
-            <li>
-              <img className="linea linea-izq" src={linea} alt="" />
+            <li className="linea linea-izq">
+              <img src={linea} alt="" />
             </li>
-            <li>
-              <img className="logo" src={logo} alt="" />
+            <li className="logo">
+              <img src={logo} alt="" />
             </li>
-            <li>
-              <img className="linea linea-dch" src={linea} alt="" />
+            <li className="linea linea-dch">
+              <img src={linea} alt="" />
             </li>
           </ul>
+          <LangSelector {...this.props} />
         </div>
-        <LangSelector {...this.props} />
       </div>
     );
   }
