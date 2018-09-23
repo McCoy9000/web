@@ -90,16 +90,16 @@
 .reel {
   position: absolute;
   height: 210px;
-  padding: 50px 0px 50px 50px;
+  padding: 0px 0px 0px 50px;
   white-space: nowrap;
   -webkit-scrollbar-display: none;
 }
 
 .reel-container {
   position: relative;
-  height: 400px;
+  height: 280px;
   width: 100%;
-  padding: 20px 0px 20px 20px;
+  padding: 0px 0px 0px 20px;
   overflow-x: hidden;
   -webkit-scrollbar-display: none;
 }
@@ -110,9 +110,6 @@
 }
 .hscroll {
   position: absolute;
-  width: min-content;
-  height: 500px;
-  border: 1px solid rgba(0, 0, 0, 1);
 }
 /*DOSSIER*/
 .dossier {

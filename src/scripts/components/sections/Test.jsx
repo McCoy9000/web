@@ -48,22 +48,26 @@ export default class Test extends Component {
           <div className="reel-container" ref={this.hscrollable1}>
             <h5>Graphic design</h5>
             <HScrollContainer>
-              <div draggable="true" className="graphic-design-reel reel">
+              <div className="reel">
                 <ImageReel images={graphicDesign} />
               </div>
             </HScrollContainer>
           </div>
           <div className="reel-container">
             <h5>Illustration</h5>
-            <div className="graphic-design-reel reel">
-              <ImageReel images={illustration} />
-            </div>
+            <HScrollContainer>
+              <div className="reel">
+                <ImageReel images={illustration} />
+              </div>
+            </HScrollContainer>
           </div>
           <div className="reel-container">
             <h5>Projects</h5>
-            <div className="graphic-design-reel reel">
-              <ImageReel images={projects} />
-            </div>
+            <HScrollContainer>
+              <div className="reel">
+                <ImageReel images={projects} />
+              </div>
+            </HScrollContainer>
           </div>
         </div>
       </div>
