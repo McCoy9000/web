@@ -56,6 +56,16 @@ export default class NavMenu extends Component {
               Contact
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/test"
+              activeStyle={{
+                fontWeight: "bold"
+              }}
+            >
+              Test
+            </NavLink>
+          </li>
         </ul>
       </div>
     );

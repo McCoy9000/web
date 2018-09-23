@@ -42,7 +42,7 @@ function messageManager() {
         language: newLanguage
       });
     } else {
-      return "It was not possible to change language";
+      return "error.changeLang";
     }
   };
 

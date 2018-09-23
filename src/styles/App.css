@@ -1,3 +1,11 @@
+/*body*/
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
 /*HEADER*/
 .header {
   position: relative;
@@ -74,28 +82,38 @@
   width: 6em;
 }
 
+/*FEEDBACK*/
+
 /*BODY*/
 
 /*WORKS*/
 .reel {
+  position: absolute;
   height: 210px;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  padding: 50px 0px 50px 50px;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
   -webkit-scrollbar-display: none;
 }
-.reel img {
-  max-height: 200px;
-  margin: 5px;
-}
+
 .reel-container {
-  padding: 20px;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  padding: 20px 0px 20px 20px;
+  overflow-x: hidden;
+  -webkit-scrollbar-display: none;
 }
 .thumbnail {
-  display: inline-block;
+  max-height: 200px;
+  margin: 5px;
+  display: inline;
 }
-
+.hscroll {
+  position: absolute;
+  width: min-content;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
 /*DOSSIER*/
 .dossier {
   float: right;

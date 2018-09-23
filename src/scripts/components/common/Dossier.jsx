@@ -9,7 +9,9 @@ export default class Dossier extends Component {
     return (
       <div className="dossier">
         <h3 className="dossier-title">{name}</h3>
-        <p className="dossier-text">{name + ".text"}</p>
+        <p className="dossier-text">
+          <FormattedMessage id={name + ".text"} />
+        </p>
         <img className="dossier-image" src={src} alt={name} title={name} />
         <p className="dossier-footer">
           <FormattedMessage id={name + ".footer"} />

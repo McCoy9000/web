@@ -1,10 +1,28 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import Dossier from "../common/Dossier";
+import HScrollContainer from "../hoc/HScrollContainer";
 import importAll from "../workers/imageRetriever";
 import ImageReel from "../common/ImageReel";
 
-export default class Works extends Component {
+export default class Test extends Component {
+  /*componentDidMount() {
+    this.button = document.querySelector(".test");
+  }
+
+  render() {
+    const sendMessage = () => {
+      this.button.dispatchEvent(
+        new CustomEvent("feedback", {
+          bubbles: true,
+          detail: { text: "test.messagebutton" }
+        })
+      );
+    };
+    return (
+      <div className="test">
+        <button onClick={sendMessage}>SendMessage</button>
+      </div>
+    );
+  }*/
   render() {
     const images = importAll(
       require.context(
@@ -24,27 +42,16 @@ export default class Works extends Component {
 
     const projects = images.filter(image => image.path.includes("projects"));
 
-    const scrollReel = e => {
-      const reel = document.querySelectorAll(".reel");
-      const mouseinitialposition = e.clientX;
-      let mouseposition = e.clientX;
-      console.log(reel);
-      reel.style.left = mouseposition - mouseinitialposition + "px";
-    };
-
     return (
       <div className="works">
-        <Route path="/works/:id" component={Dossier} />
         <div className="works-container">
-          <div className="reel-container">
+          <div className="reel-container" ref={this.hscrollable1}>
             <h5>Graphic design</h5>
-            <div
-              draggable="true"
-              className="graphic-design-reel reel"
-              onDragStart={scrollReel}
-            >
-              <ImageReel images={graphicDesign} />
-            </div>
+            <HScrollContainer>
+              <div draggable="true" className="graphic-design-reel reel">
+                <ImageReel images={graphicDesign} />
+              </div>
+            </HScrollContainer>
           </div>
           <div className="reel-container">
             <h5>Illustration</h5>

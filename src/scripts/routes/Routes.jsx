@@ -5,7 +5,7 @@ import Bio from "../components/sections/Bio";
 import Blog from "../components/sections/Blog";
 import Shop from "../components/sections/Shop";
 import Contact from "../components/sections/Contact";
-import Dossier from "../components/common/Dossier";
+import Test from "../components/sections/Test";
 
 export default class Routes extends Component {
   render() {
@@ -17,6 +17,7 @@ export default class Routes extends Component {
         <Route path="/blog" component={Blog} />
         <Route path="/shop" component={Shop} />
         <Route path="/contact" component={Contact} />
+        <Route path="/test" component={Test} />
       </Switch>
     );
   }

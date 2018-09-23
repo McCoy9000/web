@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import Thumbnail from "./Thumbnail";
 
 const ImageReel = props => {
+  
+
+
   return props.images.map(image => {
     return (
       <NavLink
@@ -23,7 +26,6 @@ const ImageReel = props => {
           src={image.src}
           title={image.name}
           alt={image.name}
-          //onClick={handleClick.bind(this)}
         />
       </NavLink>
     );
