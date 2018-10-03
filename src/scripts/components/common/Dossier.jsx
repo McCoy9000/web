@@ -3,8 +3,8 @@ import { FormattedMessage } from "react-intl";
 
 export default class Dossier extends Component {
   render() {
-    const { src, title } = this.props.location.state;
-    const name = title.replace(/.png|.jpe?g|.gif/, "");
+    const { images, index } = this.props;
+    const name = images[index].name.replace(/.png|.jpe?g|.gif/, "");
 
     return (
       <div className="dossier">
@@ -12,7 +12,12 @@ export default class Dossier extends Component {
         <p className="dossier-text">
           <FormattedMessage id={name + ".text"} />
         </p>
-        <img className="dossier-image" src={src} alt={name} title={name} />
+        <img
+          className="dossier-image"
+          src={images[index].src}
+          alt={name}
+          title={name}
+        />
         <p className="dossier-footer">
           <FormattedMessage id={name + ".footer"} />
         </p>

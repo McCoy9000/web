@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HScrollContainer from "../hoc/HScrollContainer";
 import importAll from "../workers/imageRetriever";
-import ImageReel from "../common/ImageReel";
+import Reel from "../common/Reel";
 
 export default class Test extends Component {
   /*componentDidMount() {
@@ -47,9 +47,9 @@ export default class Test extends Component {
         <div className="works-container">
           <div className="reel-container" ref={this.hscrollable1}>
             <h5>Graphic design</h5>
-            <HScrollContainer>
+            <HScrollContainer history={this.props.history}>
               <div className="reel">
-                <ImageReel images={graphicDesign} />
+                <Reel images={graphicDesign} />
               </div>
             </HScrollContainer>
           </div>
@@ -57,7 +57,7 @@ export default class Test extends Component {
             <h5>Illustration</h5>
             <HScrollContainer>
               <div className="reel">
-                <ImageReel images={illustration} />
+                <Reel images={illustration} />
               </div>
             </HScrollContainer>
           </div>
@@ -65,7 +65,7 @@ export default class Test extends Component {
             <h5>Projects</h5>
             <HScrollContainer>
               <div className="reel">
-                <ImageReel images={projects} />
+                <Reel images={projects} />
               </div>
             </HScrollContainer>
           </div>
