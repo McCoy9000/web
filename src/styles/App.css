@@ -113,6 +113,24 @@
 }
 /*DOSSIER*/
 .dossier {
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  z-index: 2;
+  background: white;
+  box-shadow: 0px 5px 5px 0px grey;
+}
+.dossier-content {
+  width: 100%;
+  margin: auto;
+}
+
+.dossier-content img {
+  max-width: 60%;
+  max-height: 100%;
+  padding: 50px;
   float: right;
-  width: 70%;
+}
+.dossier-footer {
+  clear: right;
 }
